@@ -39,14 +39,14 @@ class Player
             # end if statement end
             # end while statement end
             #if (input_hand == 0 || input_hand == 1 || input_hand == 2)
-                return input_hand 
+                #return input_hand 
             
            # else 
-                puts "Please enter a number between 0 ~ 2 ."
-                puts "Please enter the number again. "
-                puts "0: Goo, 1: Choki, 2: Par"
-                input_hand = gets.chomp.to_i
-                puts input_hand 
+                #puts "Please enter a number between 0 ~ 2 ."
+                #puts "Please enter the number again. "
+                #puts "0: Goo, 1: Choki, 2: Par"
+                #input_hand = gets.chomp.to_i
+                #puts input_hand 
             #end
         #end
     end
