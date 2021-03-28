@@ -7,12 +7,27 @@ class Player
         # Get what the player has entered in the variable "input_hand" and assign it.
         #Hint! Use the "gets method".
         #input_hand =
-        input_hand = gets.to_i
+        
+        input_hand = gets.chomp
+
+        while true 
+
+            if ('0'..'2').cover? input_hand
+                return input_hand
+            else
+                puts "Please enter a number between 0 ~ 2 ."
+                puts "Please enter the number again. "
+                puts "0: Goo, 1: Choki, 2: Par"
+                input_hand = gets.chomp
+            end
+        end
+
+        #puts input_hand 
         # If "input_hand" (acquired value) is either "0, 1, 2", it will escape from while, otherwise it will be repeated from the beginning.
         #Hint! Use "while" and "if".
         # Let's implement according to the example of the type after * * Be careful of commenting out when implementing
         # while true
-        while true 
+        #while true 
             #Write a #if condition (if "input_hand" (acquired value) is either "0, 1, 2")
             # Returns "input_hand" (obtained value) as is.
             #Hint! Use "return".
@@ -23,14 +38,17 @@ class Player
             #Get what the player has entered in the variable "input_hand" and assign it.
             # end if statement end
             # end while statement end
-            if (input_hand == 0 || input_hand == 1 || input_hand == 2)
+            #if (input_hand == 0 || input_hand == 1 || input_hand == 2)
                 return input_hand 
-            else
-                puts "Please enter a number."
+            
+           # else 
+                puts "Please enter a number between 0 ~ 2 ."
+                puts "Please enter the number again. "
                 puts "0: Goo, 1: Choki, 2: Par"
-                input_hand = gets.to_i
-            end
-        end
+                input_hand = gets.chomp.to_i
+                puts input_hand 
+            #end
+        #end
     end
 end
 
@@ -85,6 +103,7 @@ class Action
       # Assign an instantiation of Janken to the variable "janken".
       janken = Janken.new
       # Assign "true" to the variable "next_game". * This is because the iterative process is executed while while forever unless "next_game" becomes "false".
+      next_game = true 
       # Let's implement according to the example of the type after * * Be careful of commenting out when implementing。
       # while next_game
         while true 
@@ -93,7 +112,7 @@ class Action
             next_game = janken.pon(player.hand, enemy.hand)
             # When "false" is returned in the execution result of rock-paper-scissors, this while is terminated. When "true" is returned, it repeats that number of times.
              # while文のend
-            if !(next_game)
+            if !next_game
                 break
             end
 
